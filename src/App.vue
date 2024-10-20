@@ -13,7 +13,7 @@
       <el-input v-model="queryFormData.address" placeholder="收货地址" @change="getUserList" />
     </el-form-item>
   </el-form>
-  <el-button @click="handleClickAddUser">新增用户</el-button>
+  <el-button type="success" @click="handleClickAddUser">新增用户</el-button>
   <el-table border :data="userListInfo.tableData" style="width: 100%">
     <el-table-column prop="nickName" label="用户昵称" />
     <el-table-column prop="age" label="用户年龄" />
