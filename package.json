@@ -2,6 +2,7 @@
   "name": "vue-project",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite --mode dialy",
     "dev-pre": "vite --mode pre",
@@ -40,7 +41,7 @@
     "vcm-cli": "^1.0.6"
   },
   "volta": {
-    "node": "14.21.3"
+    "node": "18.20.4"
   },
   "husky": {
     "hooks": {
