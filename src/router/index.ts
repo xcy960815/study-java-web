@@ -10,7 +10,17 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
-    redirect: '/user'
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: defineAsyncComponent(
+      () => import(`../views/login/index.vue`)
+    ),
+    meta: {
+      title: '登录'
+    }
   },
   {
     path: '/user',
@@ -32,6 +42,7 @@ const routes: RouteRecordRaw[] = [
       title: '超级管理员'
     }
   },
+
   {
     path: '/*',
     redirect: '/'

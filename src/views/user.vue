@@ -130,7 +130,14 @@ import { users } from '@apis'
 import { onMounted, reactive, ref, nextTick } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage, ElMessageBox } from 'element-plus'
-
+interface UserListInfo {
+  tableData: UserOption[]
+  total: number | undefined
+  pageSize: number
+  pageNum: number
+  handlePageSizeChange(pageSize: number): void
+  handlePageNumChange(pageNum: number): void
+}
 /**
  * @description 查询条件
  */
@@ -143,8 +150,8 @@ const queryFormData = reactive({
 const addOrEditUserDialogTitle = ref('')
 const addOrEditUserDialogVisible = ref(false)
 
-const userListInfo = reactive({
-  tableData: [] as UserOption[],
+const userListInfo = reactive<UserListInfo>({
+  tableData: [],
   total: 0,
   pageSize: 10,
   pageNum: 1,
@@ -169,6 +176,7 @@ const getUserList = async () => {
   if (result.code === 200) {
     userListInfo.tableData = result.data.data
     userListInfo.total = result.data.total
+    // userListInfo.total = undefined
   }
 }
 
