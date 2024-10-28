@@ -1,0 +1,95 @@
+<template>
+  <div class="login-page">
+    <el-form
+      ref="loginFormRef"
+      style="max-width: 300px"
+      :model="loginFormData"
+      :rules="loginFormRules"
+      label-width="auto"
+      :size="loginFormSize"
+      status-icon
+    >
+      <el-form-item label="用户名" prop="name">
+        <el-input v-model="loginFormData.name" />
+      </el-form-item>
+      <el-form-item label="密码" prop="password">
+        <el-input v-model="loginFormData.password" />
+      </el-form-item>
+      <el-form-item>
+        <el-button
+          @click="handleClickLogin"
+          type="success"
+          round
+          >登入</el-button
+        >
+      </el-form-item>
+    </el-form>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { login } from '@apis'
+import { useRouter } from 'vue-router'
+import type {
+  ComponentSize,
+  FormRules,
+  FormInstance
+} from 'element-plus'
+import { reactive, ref } from 'vue'
+import { ElMessage } from 'element-plus'
+interface LoginFormData {
+  name: string
+  password: string
+}
+const router = useRouter()
+const loginFormData = reactive({
+  name: '',
+  password: ''
+})
+const loginFormRef = ref<FormInstance>()
+const loginFormSize = ref<ComponentSize>('default')
+
+const loginFormRules: FormRules<LoginFormData> = {
+  name: [
+    {
+      required: true,
+      message: '请输入用户名',
+      trigger: 'blur'
+    }
+  ],
+  password: [
+    {
+      required: true,
+      message: '请输入密码',
+      trigger: 'blur'
+    }
+  ]
+}
+/**
+ * 登入
+ */
+const handleClickLogin = async () => {
+  const valid = await loginFormRef.value
+    ?.validate()
+    .catch(() => false)
+  if (!valid) return
+  const result = await login.login<string>(loginFormData)
+  if (result.code === 200) {
+    ElMessage({
+      message: '登入成功',
+      type: 'success'
+    })
+    localStorage.setItem('token', result.data)
+    router.push('/user')
+  }
+}
+</script>
+<style lang="less" scoped>
+.login-page {
+  height: inherit;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
