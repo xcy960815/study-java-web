@@ -86,10 +86,16 @@ const handleClickLogin = async () => {
 </script>
 <style lang="less" scoped>
 .login-page {
+  position: relative;
   height: inherit;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('@/assets/images/login.jpg');
+  background-size: cover;
+  background-position: center; /* 使图像居中 */
+  width: 100%; /* 或者设置具体宽度 */
+  height: 100%; /* 或者设置具体高度 */
 }
 </style>

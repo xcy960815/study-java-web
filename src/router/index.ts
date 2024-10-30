@@ -13,6 +13,13 @@ const routes: RouteRecordRaw[] = [
     redirect: '/login'
   },
   {
+    path: '/pagination',
+    name: 'pagination',
+    component: defineAsyncComponent(
+      () => import(`../views/pagination.vue`)
+    )
+  },
+  {
     path: '/login',
     name: 'login',
     component: defineAsyncComponent(
