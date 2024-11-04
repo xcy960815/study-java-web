@@ -1,23 +1,16 @@
 import {
   createRouter,
-  createWebHistory,
+  // createWebHistory,
   createWebHashHistory
 } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
-
+import loginEventEmits from '@/utils/login-event-emits'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
     redirect: '/login'
-  },
-  {
-    path: '/pagination',
-    name: 'pagination',
-    component: defineAsyncComponent(
-      () => import(`../views/pagination.vue`)
-    )
   },
   {
     path: '/login',
@@ -72,6 +65,13 @@ const router = createRouter({
   routes
 })
 
+/**
+ * token过期
+ */
+loginEventEmits.on('login-failed', () => {
+  router.push('/login')
+})
+
 // 全局路由守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
@@ -82,7 +82,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach((to, from) => {
   // console.log(to, from)
-  console.log('afterEach')
+  // console.log('afterEach')
 })
 
 export default router

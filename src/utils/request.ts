@@ -1,6 +1,8 @@
 import axios from 'axios'
+import { useRouter } from 'vue-router'
+import loginEventEmits from './login-event-emits'
 const baseUrl = import.meta.env.VITE_API_DOMAIN_PREFIX
-
+const router = useRouter()
 const getToken = (): string => {
   const token = localStorage.getItem('token') || ''
   return token
@@ -29,9 +31,8 @@ request.interceptors.request.use(
 request.interceptors.response.use(
   (response) => {
     const responseData = response.data
-    console.log('response', response)
-
-    if (responseData.code !== 200) {
+    if (responseData.code === 401) {
+      loginEventEmits.emit('login-cancelled')
       return Promise.reject(responseData)
     }
 

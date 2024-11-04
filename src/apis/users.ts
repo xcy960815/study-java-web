@@ -1,4 +1,5 @@
 import { request } from '@utils/request'
+
 interface GetUserListParams extends baseListParams {}
 /**
  * 获取用户列表请求参数类型
