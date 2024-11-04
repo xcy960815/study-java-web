@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
-import { adminUser } from '@apis'
+import { adminUserModule } from '@apis'
 
 const adminUserList = ref<Array<AdminUserOption>>([])
 
@@ -13,7 +13,7 @@ const getAdminUserList = async () => {
     pageSize: 10,
     pageNum: 1
   }
-  const result = await adminUser.getAdminUserList(
+  const result = await adminUserModule.getAdminUserList(
     requestParams
   )
   console.log(result.data)

@@ -2,7 +2,7 @@
   <div class="login-page">
     <el-form
       ref="loginFormRef"
-      style="max-width: 300px"
+      style="width: 300px"
       :model="loginFormData"
       :rules="loginFormRules"
       label-width="auto"
@@ -28,14 +28,15 @@
 </template>
 
 <script lang="ts" setup>
-import { login } from '@apis'
+import LoginEventEmits from '../../utils/login-event-emits'
+import { loginModule } from '../../apis'
 import { useRouter } from 'vue-router'
 import type {
   ComponentSize,
   FormRules,
   FormInstance
 } from 'element-plus'
-import { reactive, ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 interface LoginFormData {
   name: string
@@ -43,10 +44,12 @@ interface LoginFormData {
 }
 const router = useRouter()
 const loginFormData = reactive({
-  name: '',
-  password: ''
+  name: 'admin',
+  password: 'password'
 })
+
 const loginFormRef = ref<FormInstance>()
+
 const loginFormSize = ref<ComponentSize>('default')
 
 const loginFormRules: FormRules<LoginFormData> = {
@@ -73,7 +76,9 @@ const handleClickLogin = async () => {
     ?.validate()
     .catch(() => false)
   if (!valid) return
-  const result = await login.login<string>(loginFormData)
+  const result = await loginModule.login<string>(
+    loginFormData
+  )
   if (result.code === 200) {
     ElMessage({
       message: '登入成功',
@@ -83,13 +88,21 @@ const handleClickLogin = async () => {
     router.push('/user')
   }
 }
+
+onMounted(() => {})
 </script>
 <style lang="less" scoped>
 .login-page {
+  position: relative;
   height: inherit;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('@/assets/images/login.jpg');
+  background-size: cover;
+  background-position: center; /* 使图像居中 */
+  width: 100%; /* 或者设置具体宽度 */
+  height: 100%; /* 或者设置具体高度 */
 }
 </style>
