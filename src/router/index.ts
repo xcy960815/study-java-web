@@ -5,7 +5,7 @@ import {
 } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
-import { eventEmitter } from '@/utils/login-event-emits'
+import { eventEmitter } from '@/utils/event-emits'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
@@ -26,23 +26,46 @@ const routes: RouteRecordRaw[] = [
     path: '/user',
     name: 'user',
     component: defineAsyncComponent(
-      () => import(`../views/user.vue`)
+      () => import(`../cpmponents/layout/index.vue`)
     ),
     meta: {
       title: '用户'
-    }
+    },
+    children: [
+      {
+        path: '/user/list',
+        name: 'list',
+        component: defineAsyncComponent(
+          () => import(`../views/user/list.vue`)
+        ),
+        meta: {
+          title: '用户列表'
+        }
+      }
+    ]
   },
   {
     path: '/admin-user',
     name: 'admin-user',
     component: defineAsyncComponent(
-      () => import(`../views/admin-user.vue`)
+      () => import(`../cpmponents/layout/index.vue`)
     ),
     meta: {
       title: '超级管理员'
-    }
+    },
+    children: [
+      {
+        path: '/admin-user/list',
+        name: 'admin-user-list',
+        component: defineAsyncComponent(
+          () => import(`../views/admin-user/list.vue`)
+        ),
+        meta: {
+          title: '超级管理员列表'
+        }
+      }
+    ]
   },
-
   {
     path: '/*',
     redirect: '/'
@@ -68,15 +91,22 @@ const router = createRouter({
 /**
  * token过期
  */
-eventEmitter.on('login-failed', () => {
+eventEmitter.on('token-invalid', () => {
   console.log('router 登录失效')
   router.push('/login')
+})
+/**
+ * 登录成功
+ */
+eventEmitter.on('login-success', () => {
+  console.log('router 登录成功')
+  router.push('/user/list')
 })
 
 // 全局路由守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
-    document.title = `${to.meta.title}`
+    // document.title = `${to.meta.title}`
   }
   next()
 })

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useRouter } from 'vue-router'
-import { eventEmitter } from './login-event-emits'
+import { eventEmitter } from './event-emits'
 const baseUrl = import.meta.env.VITE_API_DOMAIN_PREFIX
 const router = useRouter()
 const getToken = (): string => {
@@ -34,7 +34,7 @@ request.interceptors.response.use(
     if (responseData.code == 401) {
       console.log('request 登录失效')
 
-      eventEmitter.emit('login-cancelled')
+      eventEmitter.emit('token-invalid')
       return Promise.reject(responseData)
     }
 

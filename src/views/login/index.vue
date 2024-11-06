@@ -28,7 +28,6 @@
 </template>
 
 <script lang="ts" setup>
-import LoginEventEmits from '../../utils/login-event-emits'
 import { loginModule } from '../../apis'
 import { useRouter } from 'vue-router'
 import type {
@@ -38,6 +37,7 @@ import type {
 } from 'element-plus'
 import { onMounted, reactive, ref } from 'vue'
 import { ElMessage } from 'element-plus'
+import { eventEmitter } from '@/utils/event-emits'
 interface LoginFormData {
   name: string
   password: string
@@ -85,7 +85,7 @@ const handleClickLogin = async () => {
       type: 'success'
     })
     localStorage.setItem('token', result.data)
-    router.push('/user')
+    eventEmitter.emit('login-success')
   }
 }
 
@@ -101,8 +101,17 @@ onMounted(() => {})
   justify-content: center;
   background-image: url('@/assets/images/login.jpg');
   background-size: cover;
-  background-position: center; /* 使图像居中 */
-  width: 100%; /* 或者设置具体宽度 */
-  height: 100%; /* 或者设置具体高度 */
+  background-position: center;
+  /* 使图像居中 */
+  width: 100%;
+  /* 或者设置具体宽度 */
+  height: 100%;
+
+  /* 或者设置具体高度 */
+  :deep(.el-form-item__label) {
+    color: white;
+    font-size: 16px;
+    font-style: italic;
+  }
 }
 </style>
