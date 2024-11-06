@@ -1,5 +1,5 @@
 <template>
-  <div class="admin-user">admin-user</div>
+  <div class="admin-user"></div>
 </template>
 
 <script lang="ts" setup>
@@ -8,6 +8,10 @@ import { adminUserModule } from '@apis'
 
 const adminUserList = ref<Array<AdminUserOption>>([])
 
+/**
+ * @description 获取用户列表
+ * @returns {Promise<void>}
+ */
 const getAdminUserList = async () => {
   const requestParams = {
     pageSize: 10,
@@ -16,15 +20,18 @@ const getAdminUserList = async () => {
   const result = await adminUserModule.getAdminUserList(
     requestParams
   )
-  console.log(result.data)
   if (result.code === 200) {
     adminUserList.value = result.data
   }
 }
 onMounted(() => {
-  console.log('mounted')
-
   getAdminUserList()
 })
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.admin-user {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+</style>

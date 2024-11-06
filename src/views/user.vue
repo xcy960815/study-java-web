@@ -119,14 +119,15 @@
         <el-button
           type="primary"
           @click="handleClickAddOrEditConfirm"
-          >确认</el-button
         >
+          确认
+        </el-button>
       </div>
     </template>
   </el-dialog>
 </template>
 <script setup lang="ts">
-import { users } from '@apis'
+import { usersModule } from '@apis'
 import { onMounted, reactive, ref, nextTick } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage, ElMessageBox } from 'element-plus'
@@ -168,11 +169,12 @@ const userListInfo = reactive<UserListInfo>({
 const getUserList = async () => {
   const pageSize = userListInfo.pageSize
   const pageNum = userListInfo.pageNum
-  const result = await users.getUserList<UserListResult>({
-    pageSize,
-    pageNum,
-    ...queryFormData
-  })
+  const result =
+    await usersModule.getUserList<UserListResult>({
+      pageSize,
+      pageNum,
+      ...queryFormData
+    })
   if (result.code === 200) {
     userListInfo.tableData = result.data.data
     userListInfo.total = result.data.total
@@ -251,11 +253,11 @@ const handleClickAddOrEditConfirm = async () => {
   if (!valid) return
   let result
   if (addOrEditUserDialogTitle.value === '新增用户') {
-    result = await users.insertUser<boolean>(
+    result = await usersModule.insertUser<boolean>(
       addOrEditUserFormData
     )
   } else {
-    result = await users.updateUser<boolean>(
+    result = await usersModule.updateUser<boolean>(
       addOrEditUserFormData
     )
   }
@@ -273,7 +275,7 @@ const handleClickDeleteUser = (row: UserOption) => {
     type: 'warning'
   })
     .then(async () => {
-      const result = await users.deleteUser<boolean>({
+      const result = await usersModule.deleteUser<boolean>({
         userId: row.userId
       })
       if (result.code !== 200) return

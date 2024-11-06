@@ -1,102 +1,45 @@
-// import EventEmitter from "events";
+import { EventEmitter } from 'events'
 
-// const loginEventNames = [
-//     'login-success',
-//     'login-failed',
-//     'login-cancelled'
-// ] as const;
-
-// type LoginEventNames = (typeof loginEventNames)[number];
-
-// type Listener = (...args: any[]) => void;
-
-// class LoginEventEmits  {
-
-//     private listeners: Map<LoginEventNames, Set<Listener>> = new Map();
-
-//     public on(eventName: LoginEventNames, listener: Listener): LoginEventEmits {
-//         if (!this.listeners.has(eventName)) {
-//             this.listeners.set(eventName, new Set());
-//         }
-//         this.listeners.get(eventName)!.add(listener);
-//         return this;
-//     }
-
-//     public emit(eventName: LoginEventNames, ...args: any[]): boolean {
-//         if (!this.listeners.has(eventName)) return false;
-//         this.listeners.get(eventName)!.forEach((listener) => listener(...args));
-//         return true;
-//     }
-
-//     public off(eventName: LoginEventNames, listener: Listener): LoginEventEmits {
-//         this.listeners.get(eventName)?.delete(listener);
-//         return this;
-//     }
-// }
-
-// export default new LoginEventEmits();
-
-const loginEventNames = [
+// 定义事件名称
+const eventNames = [
   'login-success',
   'login-failed',
   'login-cancelled'
 ] as const
+type EventNames = (typeof eventNames)[number]
 
-type LoginEventNames = (typeof loginEventNames)[number]
-
-// 定义一个事件与回调参数的映射
-interface LoginEventMap {
-  'login-success': [number] // `login-success` 事件接受一个数字参数
-  'login-failed': [string] // `login-failed` 事件接受一个字符串参数
-  'login-cancelled': [] // `login-cancelled` 不需要参数
+// 定义事件与回调参数的映射
+interface EventMap {
+  'login-success': [number] // 回调参数是数字
+  'login-failed': [string] // 回调参数是字符串
+  'login-cancelled': [] // 无参数
 }
 
-// 获取某个事件的回调类型
-type Listener<T extends LoginEventNames> = (
-  ...args: LoginEventMap[T]
-) => void
-
-class LoginEventEmits {
-  private listeners: Map<
-    LoginEventNames,
-    Set<Listener<any>>
-  > = new Map()
-
-  public on<T extends LoginEventNames>(
+// 定义一个事件发射器类
+class CustomEventEmitter extends EventEmitter {
+  public on<T extends EventNames>(
     eventName: T,
-    listener: Listener<T>
+    listener: (...args: EventMap[T]) => void
   ): this {
-    if (!this.listeners.has(eventName)) {
-      this.listeners.set(eventName, new Set())
-    }
-    this.listeners
-      .get(eventName)!
-      .add(listener as Listener<any>)
-    return this
+    return super.on(eventName, listener)
   }
 
-  public emit<T extends LoginEventNames>(
+  public emit<T extends EventNames>(
     eventName: T,
-    ...args: LoginEventMap[T]
+    ...args: EventMap[T]
   ): boolean {
-    if (!this.listeners.has(eventName)) return false
-    this.listeners
-      .get(eventName)!
-      .forEach((listener) =>
-        (listener as Listener<T>)(...args)
-      )
-    return true
+    return super.emit(eventName, ...args)
   }
 
-  public off<T extends LoginEventNames>(
+  public off<T extends EventNames>(
     eventName: T,
-    listener: Listener<T>
+    listener: (...args: EventMap[T]) => void
   ): this {
-    this.listeners
-      .get(eventName)
-      ?.delete(listener as Listener<any>)
-    return this
+    return super.off(eventName, listener)
   }
 }
 
-export default new LoginEventEmits()
+// 使用示例
+const eventEmitter = new CustomEventEmitter()
+
+export { eventEmitter }

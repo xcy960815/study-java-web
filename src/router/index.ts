@@ -5,7 +5,7 @@ import {
 } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
-import loginEventEmits from '@/utils/login-event-emits'
+import { eventEmitter } from '@/utils/login-event-emits'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
@@ -68,7 +68,8 @@ const router = createRouter({
 /**
  * token过期
  */
-loginEventEmits.on('login-failed', () => {
+eventEmitter.on('login-failed', () => {
+  console.log('router 登录失效')
   router.push('/login')
 })
 
