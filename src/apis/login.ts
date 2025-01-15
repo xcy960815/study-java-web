@@ -1,8 +1,9 @@
 import { request } from '@utils/request'
 
 interface LoginRequestParams {
-  name: string
+  username: string
   password: string
+  rememberMe: boolean
 }
 
 /**
