@@ -6,7 +6,7 @@
       :rules="loginFormRules"
       class="login-form"
     >
-      <h3 class="login-title">study-java-web</h3>
+      <h3 class="login-title">{{ viteAppTitle }}</h3>
       <el-form-item prop="username">
         <el-input
           v-model="loginFormData.username"
@@ -70,22 +70,20 @@
 </template>
 
 <script lang="ts" setup>
-import { loginModule } from '../../apis'
-import { useRouter } from 'vue-router'
+import { useUserInfoStore } from '@/store'
 import type { FormRules, FormInstance } from 'element-plus'
 import { onMounted, reactive, ref, computed } from 'vue'
-import { ElMessage } from 'element-plus'
-import { eventEmitter } from '@/utils/event-emits'
 import { Lock, User, View } from '@element-plus/icons-vue'
-// @ts-ignore
 import MD5 from 'MD5'
-
 interface LoginFormData {
   username: string
   password: string
   rememberMe: boolean
 }
-const router = useRouter()
+
+const viteAppTitle = import.meta.env.VITE_APP_TITLE
+
+const userInfoStore = useUserInfoStore()
 const logining = ref(false)
 
 const loginFormData = reactive({
@@ -136,16 +134,9 @@ const handleLogin = async () => {
     .catch(() => false)
   if (!valid) return
   const loginData = { ...loginFormData }
+
   loginData.password = MD5(loginFormData.password)
-  const result = await loginModule.login<string>(loginData)
-  if (result.code === 200) {
-    ElMessage({
-      message: '登入成功',
-      type: 'success'
-    })
-    localStorage.setItem('token', result.data)
-    eventEmitter.emit('login-success')
-  }
+  userInfoStore.login(loginData)
 }
 
 onMounted(() => {})

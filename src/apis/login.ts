@@ -1,9 +1,19 @@
 import { request } from '@utils/request'
 
-interface LoginRequestParams {
+export interface LoginRequestParams {
   username: string
   password: string
   rememberMe: boolean
+}
+
+interface LoginResponse {
+  address: string
+  createTime: string
+  id: number
+  introduceSign: string
+  loginName: string
+  nickName: string
+  token: string
 }
 
 /**
@@ -11,7 +21,7 @@ interface LoginRequestParams {
  * @param {LoginRequestParams} requestParams
  * @returns {Promise<ResponseResult<T>>}
  */
-export function login<T>(
+export function login<T extends LoginResponse>(
   requestParams: LoginRequestParams
 ) {
   const url = `/login`

@@ -92,14 +92,14 @@ const router = createRouter({
  * token过期
  */
 eventEmitter.on('token-invalid', () => {
-  console.log('router 登录失效')
+  // console.log('router 登录失效')
   router.push('/login')
 })
 /**
  * 登录成功
  */
 eventEmitter.on('login-success', () => {
-  console.log('router 登录成功')
+  // console.log('router 登录成功')
   router.push('/user/list')
 })
 
