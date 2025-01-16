@@ -21,7 +21,12 @@ class CustomEventEmitter {
     Set<(...args: any[]) => void>
   > = new Map()
 
-  // 监听事件
+  /**
+   * 监听事件
+   * @param eventName
+   * @param listener
+   * @returns
+   */
   public on<T extends EventNames>(
     eventName: T,
     listener: (...args: EventMap[T]) => void
@@ -35,7 +40,12 @@ class CustomEventEmitter {
     return this
   }
 
-  // 触发事件
+  /**
+   * 触发事件
+   * @param eventName {T extends EventNames}
+   * @param args
+   * @returns
+   */
   public emit<T extends EventNames>(
     eventName: T,
     ...args: EventMap[T]
@@ -48,7 +58,12 @@ class CustomEventEmitter {
     return true
   }
 
-  // 移除监听
+  /**
+   * 移除监听
+   * @param eventName
+   * @param listener
+   * @returns
+   */
   public off<T extends EventNames>(
     eventName: T,
     listener: (...args: EventMap[T]) => void

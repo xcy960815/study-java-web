@@ -4,7 +4,7 @@ import { ElMessage } from 'element-plus'
 import { eventEmitter } from '@/utils/event-emits'
 import { loginModule } from '@apis'
 import { setToken } from '@utils/token'
-
+import { userModule } from '@apis'
 export const userInfoStore = defineStore(Names.User, {
   state: () => {
     return {
@@ -32,20 +32,20 @@ export const userInfoStore = defineStore(Names.User, {
           type: 'success'
         })
         const {
-          address,
-          createTime,
-          id,
-          introduceSign,
-          loginName,
-          nickName,
+          // address,
+          // createTime,
+          // id,
+          // introduceSign,
+          // loginName,
+          // nickName,
           token
         } = result.data
-        this.address = address
-        this.createTime = createTime
-        this.id = id
-        this.introduceSign = introduceSign
-        this.loginName = loginName
-        this.nickName = nickName
+        // this.address = address
+        // this.createTime = createTime
+        // this.id = id
+        // this.introduceSign = introduceSign
+        // this.loginName = loginName
+        // this.nickName = nickName
         await setToken(token)
         eventEmitter.emit('login-success')
       }
@@ -61,7 +61,19 @@ export const userInfoStore = defineStore(Names.User, {
         await setToken('')
         eventEmitter.emit('login-out')
       }
+    },
+    async getUserInfo() {
+      const result = await userModule.getUserInfo()
+      // console.log(result);
+      if (result.code === 200) {
+        this.address = result.data.address
+        this.createTime = result.data.createTime
+        this.id = result.data.id
+        this.introduceSign = result.data.introduceSign
+        this.loginName = result.data.loginName
+        this.nickName = result.data.nickName
+      }
     }
-  },
-  persist: true
+  }
+  // persist: true
 })

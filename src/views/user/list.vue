@@ -135,7 +135,7 @@
   </el-dialog>
 </template>
 <script setup lang="ts">
-import { usersModule } from '@apis'
+import { userModule } from '@apis'
 import { onMounted, reactive, ref, nextTick } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage, ElMessageBox } from 'element-plus'
@@ -178,7 +178,7 @@ const getUserList = async () => {
   const pageSize = userListInfo.pageSize
   const pageNum = userListInfo.pageNum
   const result =
-    await usersModule.getUserList<UserListResult>({
+    await userModule.getUserList<UserListResult>({
       pageSize,
       pageNum,
       ...queryFormData
@@ -261,11 +261,11 @@ const handleClickAddOrEditConfirm = async () => {
   if (!valid) return
   let result
   if (addOrEditUserDialogTitle.value === '新增用户') {
-    result = await usersModule.insertUser<boolean>(
+    result = await userModule.insertUser<boolean>(
       addOrEditUserFormData
     )
   } else {
-    result = await usersModule.updateUser<boolean>(
+    result = await userModule.updateUser<boolean>(
       addOrEditUserFormData
     )
   }
@@ -283,7 +283,7 @@ const handleClickDeleteUser = (row: UserOption) => {
     type: 'warning'
   })
     .then(async () => {
-      const result = await usersModule.deleteUser<boolean>({
+      const result = await userModule.deleteUser<boolean>({
         userId: row.userId
       })
       if (result.code !== 200) return

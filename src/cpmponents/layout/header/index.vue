@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useUserInfoStore } from '@store'
 const isActive = ref(false)
 const userInfoStore = useUserInfoStore()
@@ -60,6 +60,10 @@ const handleChooseItem = (command: string) => {
       break
   }
 }
+
+onMounted(() => {
+  userInfoStore.getUserInfo()
+})
 </script>
 <style lang="less" scoped>
 .layout-header-container {

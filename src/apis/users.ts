@@ -1,6 +1,17 @@
 import { request } from '@utils/request'
 
 interface GetUserListParams extends baseListParams {}
+
+/**
+ * 获取当前登录用户信息
+ * @returns {ResponseResult<UserOption>}
+ */
+export const getUserInfo = <T extends UserOption>() => {
+  const url = `/user/getUserInfo`
+  return request.get<ResponseResult<T>, ResponseResult<T>>(
+    url
+  )
+}
 /**
  * 获取用户列表请求参数类型
  * @param queryFormData
