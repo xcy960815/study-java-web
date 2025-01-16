@@ -1,24 +1,22 @@
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 import { eventEmitter } from './event-emits'
+import { getToken } from './token'
 const baseUrl = import.meta.env.VITE_API_DOMAIN_PREFIX
 const router = useRouter()
-const getToken = (): string => {
-  const token = localStorage.getItem('token') || ''
-  return token
-}
+axios.defaults.withCredentials = false
 const request = axios.create({
   baseURL: baseUrl,
   timeout: 1000
+  // withCredentials: false
 })
 
 request.interceptors.request.use(
-  (config) => {
+  async (config) => {
+    const token = await getToken()
     if (!config.url?.includes('/login')) {
       // 添加请求头
-      config.headers[
-        'Authorization'
-      ] = `Bearer ${getToken()}`
+      config.headers['Authorization'] = `Bearer ${token}`
     }
 
     return config

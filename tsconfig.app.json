@@ -11,7 +11,8 @@
       "@utils/*": ["./src/utils/*"],
       "@assets/*": ["./src/assets/*"],
       "@apis/*": ["./src/apis/*"],
-      "@apis": ["./src/apis"]
+      "@apis": ["./src/apis"],
+      "@store": ["./src/store"]
     }
   }
 }

@@ -1,4 +1,4 @@
-export * as usersModule from './users'
+export * as userModule from './users'
 
 export * as adminUserModule from './admin-user'
 

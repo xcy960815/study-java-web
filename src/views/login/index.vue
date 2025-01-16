@@ -2,58 +2,115 @@
   <div class="login-page">
     <el-form
       ref="loginFormRef"
-      style="width: 300px"
       :model="loginFormData"
       :rules="loginFormRules"
-      label-width="auto"
-      :size="loginFormSize"
-      status-icon
+      class="login-form"
     >
-      <el-form-item label="用户名" prop="name">
-        <el-input v-model="loginFormData.name" />
-      </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input v-model="loginFormData.password" />
-      </el-form-item>
-      <el-form-item>
-        <el-button
-          @click="handleClickLogin"
-          type="success"
-          round
-          >登入</el-button
+      <h3 class="login-title">{{ viteAppTitle }}</h3>
+      <el-form-item prop="username">
+        <el-input
+          v-model="loginFormData.username"
+          type="text"
+          auto-complete="off"
+          size="large"
+          placeholder="账号"
         >
+          <template #prefix>
+            <el-icon class="el-input__icon">
+              <User />
+            </el-icon>
+          </template>
+        </el-input>
+      </el-form-item>
+      <el-form-item prop="password">
+        <el-input
+          v-model="loginFormData.password"
+          :type="passwordInputType"
+          size="large"
+          auto-complete="off"
+          placeholder="密码"
+          @keyup.enter.native="handleLogin"
+        >
+          <template #prefix>
+            <el-icon class="el-input__icon">
+              <Lock />
+            </el-icon>
+          </template>
+          <template #suffix>
+            <el-icon
+              class="el-input__icon_view"
+              @click="handleClickPasswordIcon"
+            >
+              <View v-show="showVievIcon" />
+              <Hide v-show="showHideIcon" />
+            </el-icon>
+          </template>
+        </el-input>
+      </el-form-item>
+
+      <el-checkbox
+        v-model="loginFormData.rememberMe"
+        style="margin: 0px 0px 25px 0px"
+        >记住密码</el-checkbox
+      >
+      <el-form-item style="width: 100%">
+        <el-button
+          :loading="logining"
+          size="medium"
+          type="primary"
+          style="width: 100%"
+          @click.native.prevent="handleLogin"
+        >
+          <span v-if="!logining">登 录</span>
+          <span v-else>登 录 中...</span>
+        </el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { loginModule } from '../../apis'
-// import { useRouter } from 'vue-router'
-import type {
-  ComponentSize,
-  FormRules,
-  FormInstance
-} from 'element-plus'
-import { onMounted, reactive, ref } from 'vue'
-import { ElMessage } from 'element-plus'
-import { eventEmitter } from '@/utils/event-emits'
+import { useUserInfoStore } from '@/store'
+import type { FormRules, FormInstance } from 'element-plus'
+import { onMounted, reactive, ref, computed } from 'vue'
+import { Lock, User, View } from '@element-plus/icons-vue'
+import MD5 from 'MD5'
 interface LoginFormData {
-  name: string
+  username: string
   password: string
+  rememberMe: boolean
 }
-// const router = useRouter()
+
+const viteAppTitle = import.meta.env.VITE_APP_TITLE
+
+const userInfoStore = useUserInfoStore()
+const logining = ref(false)
+
 const loginFormData = reactive({
-  name: 'admin',
-  password: 'password'
+  username: '13700002703',
+  password: '123456',
+  rememberMe: false
 })
+
+const passwordInputType = ref('password')
+const showHideIcon = computed(
+  () => passwordInputType.value === 'text'
+)
+const showVievIcon = computed(
+  () => passwordInputType.value === 'password'
+)
+
+const handleClickPasswordIcon = () => {
+  passwordInputType.value =
+    passwordInputType.value === 'password'
+      ? 'text'
+      : 'password'
+}
 
 const loginFormRef = ref<FormInstance>()
 
-const loginFormSize = ref<ComponentSize>('default')
-
 const loginFormRules: FormRules<LoginFormData> = {
-  name: [
+  username: [
     {
       required: true,
       message: '请输入用户名',
@@ -71,22 +128,15 @@ const loginFormRules: FormRules<LoginFormData> = {
 /**
  * 登入
  */
-const handleClickLogin = async () => {
+const handleLogin = async () => {
   const valid = await loginFormRef.value
     ?.validate()
     .catch(() => false)
   if (!valid) return
-  const result = await loginModule.login<string>(
-    loginFormData
-  )
-  if (result.code === 200) {
-    ElMessage({
-      message: '登入成功',
-      type: 'success'
-    })
-    localStorage.setItem('token', result.data)
-    eventEmitter.emit('login-success')
-  }
+  const loginData = { ...loginFormData }
+
+  loginData.password = MD5(loginFormData.password)
+  userInfoStore.login(loginData)
 }
 
 onMounted(() => {})
@@ -102,12 +152,26 @@ onMounted(() => {})
   background-image: url('@/assets/images/login.jpg');
   background-size: cover;
   background-position: center;
-  /* 使图像居中 */
   width: 100%;
-  /* 或者设置具体宽度 */
   height: 100%;
 
-  /* 或者设置具体高度 */
+  .login-form {
+    border-radius: 6px;
+    background: #ffffff;
+    width: 400px;
+    padding: 25px 25px 5px 25px;
+
+    .el-input__icon_view {
+      cursor: pointer;
+    }
+  }
+
+  .login-title {
+    margin: 0px auto 30px auto;
+    text-align: center;
+    color: #707070;
+  }
+
   :deep(.el-form-item__label) {
     color: white;
     font-size: 16px;

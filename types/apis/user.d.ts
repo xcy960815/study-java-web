@@ -2,7 +2,7 @@ declare interface UserOption {
   /**
    * 用户主键id
    */
-  userId: string
+  id: number
 
   /**
    * 用户昵称

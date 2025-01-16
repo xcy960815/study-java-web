@@ -1,6 +1,7 @@
 const eventNames = [
   'token-invalid',
-  'login-success'
+  'login-success',
+  'login-out'
 ] as const
 
 // 定义事件名称
@@ -10,6 +11,7 @@ type EventNames = (typeof eventNames)[number]
 interface EventMap {
   'token-invalid': [] // 无参数
   'login-success': [] // 示例参数为数字
+  'login-out': []
 }
 
 // 自定义事件发射器类
@@ -19,7 +21,12 @@ class CustomEventEmitter {
     Set<(...args: any[]) => void>
   > = new Map()
 
-  // 监听事件
+  /**
+   * 监听事件
+   * @param eventName
+   * @param listener
+   * @returns
+   */
   public on<T extends EventNames>(
     eventName: T,
     listener: (...args: EventMap[T]) => void
@@ -33,7 +40,12 @@ class CustomEventEmitter {
     return this
   }
 
-  // 触发事件
+  /**
+   * 触发事件
+   * @param eventName {T extends EventNames}
+   * @param args
+   * @returns
+   */
   public emit<T extends EventNames>(
     eventName: T,
     ...args: EventMap[T]
@@ -46,7 +58,12 @@ class CustomEventEmitter {
     return true
   }
 
-  // 移除监听
+  /**
+   * 移除监听
+   * @param eventName
+   * @param listener
+   * @returns
+   */
   public off<T extends EventNames>(
     eventName: T,
     listener: (...args: EventMap[T]) => void
