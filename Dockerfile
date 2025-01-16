@@ -1,12 +1,12 @@
 # 第一阶段：node镜像打包
-FROM node:latest AS frontend-builder
+FROM node:18 AS frontend-builder
 WORKDIR /study-java-web
 COPY . .
 RUN npm install
-RUN npm run build
+RUN npm run build-prod
 
 # 第二阶段：nginx打包
-FROM nginx:latest
+FROM nginx:1.21
 EXPOSE 80
 WORKDIR /app
 # 替换nginx配置

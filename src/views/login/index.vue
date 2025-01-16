@@ -29,7 +29,7 @@
 
 <script lang="ts" setup>
 import { loginModule } from '../../apis'
-import { useRouter } from 'vue-router'
+// import { useRouter } from 'vue-router'
 import type {
   ComponentSize,
   FormRules,
@@ -42,7 +42,7 @@ interface LoginFormData {
   name: string
   password: string
 }
-const router = useRouter()
+// const router = useRouter()
 const loginFormData = reactive({
   name: 'admin',
   password: 'password'
