@@ -103,6 +103,11 @@ eventEmitter.on('login-success', () => {
   router.push('/user/list')
 })
 
+eventEmitter.on('login-out', () => {
+  // console.log('router 登录失效')
+  router.push('/login')
+})
+
 // 全局路由守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {

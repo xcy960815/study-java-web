@@ -11,3 +11,8 @@ export const setToken = (token: string) => {
     value: token
   })
 }
+
+export const removeToken = async () => {
+  return await cookieStore.delete(TOKENNAME)
+  // cookieStore.onchange(() => {
+}

@@ -4,6 +4,7 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate' //引入持�
 export { userInfoStore as useUserInfoStore } from './user'
 
 const store = createPinia()
+// 数据持久化
 store.use(piniaPluginPersistedstate)
 
 export default store

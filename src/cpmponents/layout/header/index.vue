@@ -14,15 +14,23 @@
         />
       </svg>
     </div>
-    <el-dropdown trigger="contextmenu" size="default">
-      <span class="el-dropdown-link">
+    <el-dropdown
+      trigger="contextmenu"
+      @command="handleChooseItem"
+      size="default"
+    >
+      <span class="user-name">
         {{ userInfo.nickName }}
       </span>
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item>个人中心</el-dropdown-item>
-          <el-dropdown-item>Action 2</el-dropdown-item>
-          <el-dropdown-item>退出登录</el-dropdown-item>
+          <el-dropdown-item command="user-info"
+            >个人中心</el-dropdown-item
+          >
+          <!-- <el-dropdown-item>Action 2</el-dropdown-item> -->
+          <el-dropdown-item command="login-out"
+            >退出登录</el-dropdown-item
+          >
         </el-dropdown-menu>
       </template>
     </el-dropdown>
@@ -39,6 +47,19 @@ const userInfo = computed(() => userInfoStore.$state)
 const toggleClick = () => {
   isActive.value = !isActive.value
 }
+
+const handleChooseItem = (command: string) => {
+  switch (command) {
+    case 'user-info':
+      console.log('个人中心')
+
+      break
+    case 'login-out':
+      console.log('退出登录')
+
+      break
+  }
+}
 </script>
 <style lang="less" scoped>
 .layout-header-container {
@@ -53,6 +74,7 @@ const toggleClick = () => {
     cursor: pointer;
     // transition: transform 0.3s;
   }
+
   .hamburger.is-active {
     transform: rotate(180deg);
   }

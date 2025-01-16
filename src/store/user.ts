@@ -49,6 +49,18 @@ export const userInfoStore = defineStore(Names.User, {
         await setToken(token)
         eventEmitter.emit('login-success')
       }
+    },
+
+    async logout() {
+      const result = await loginModule.logout()
+      if (result.code === 200) {
+        ElMessage({
+          message: '退出成功',
+          type: 'success'
+        })
+        await setToken('')
+        eventEmitter.emit('login-out')
+      }
     }
   },
   persist: true

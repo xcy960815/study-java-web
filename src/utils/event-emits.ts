@@ -1,6 +1,7 @@
 const eventNames = [
   'token-invalid',
-  'login-success'
+  'login-success',
+  'login-out'
 ] as const
 
 // 定义事件名称
@@ -10,6 +11,7 @@ type EventNames = (typeof eventNames)[number]
 interface EventMap {
   'token-invalid': [] // 无参数
   'login-success': [] // 示例参数为数字
+  'login-out': []
 }
 
 // 自定义事件发射器类

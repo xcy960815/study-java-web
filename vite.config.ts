@@ -2,6 +2,9 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+
+import { createHtmlPlugin } from 'vite-plugin-html'
+
 // https://vitejs.dev/config/
 /** @type {import('vite').UserConfig} */
 export default defineConfig(({ mode }) => {
@@ -12,10 +15,12 @@ export default defineConfig(({ mode }) => {
     mode,
     './env/'
   ).VITE_API_DOMAIN //'http://localhost:8081'
+
   const VITE_API_DOMAIN_PREFIX = loadEnv(
     mode,
     './env/'
   ).VITE_API_DOMAIN_PREFIX // '/dev_api'
+
   const VITE_API_DOMAIN_PREFIX_REG = new RegExp(
     `^${VITE_API_DOMAIN_PREFIX}`
   )
@@ -23,6 +28,12 @@ export default defineConfig(({ mode }) => {
     mode,
     './env/'
   ).VITE_BASE_URL
+
+  const VITE_APP_TITLE = loadEnv(
+    mode,
+    './env/'
+  ).VITE_APP_TITLE
+
   return {
     base: VITE_BASE_URL,
     envDir: './env', // 环境变量目录 不设置会在 import.meta.env 中取不到变量
@@ -57,7 +68,17 @@ export default defineConfig(({ mode }) => {
         }
       }
     },
-    plugins: [vue(), vueDevTools()],
+    plugins: [
+      vue(),
+      vueDevTools(),
+      createHtmlPlugin({
+        inject: {
+          data: {
+            VITE_APP_TITLE
+          }
+        }
+      })
+    ],
     resolve: {
       alias: {
         '@': fileURLToPath(

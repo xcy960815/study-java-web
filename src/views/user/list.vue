@@ -37,8 +37,16 @@
     :data="userListInfo.tableData"
     style="width: 100%"
   >
-    <el-table-column prop="nickName" label="用户昵称" />
-    <el-table-column prop="age" label="用户年龄" />
+    <el-table-column
+      prop="nickName"
+      label="用户昵称"
+      width="100"
+    />
+    <el-table-column
+      prop="age"
+      label="用户年龄"
+      width="100"
+    />
     <el-table-column prop="loginName" label="登陆名称" />
     <el-table-column
       prop="introduceSign"

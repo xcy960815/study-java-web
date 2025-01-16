@@ -30,3 +30,14 @@ export function login<T extends LoginResponse>(
     requestParams
   )
 }
+
+/**
+ * 登出接口
+ * @returns {Promise<ResponseResult<T>>}
+ */
+export function logout<T extends null>() {
+  const url = `/logout`
+  return request.post<ResponseResult<T>, ResponseResult<T>>(
+    url
+  )
+}
