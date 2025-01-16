@@ -5,6 +5,7 @@ import { eventEmitter } from '@/utils/event-emits'
 import { loginModule } from '@apis'
 import { setToken } from '@utils/token'
 import { userModule } from '@apis'
+
 export const userInfoStore = defineStore(Names.User, {
   state: () => {
     return {
@@ -17,11 +18,7 @@ export const userInfoStore = defineStore(Names.User, {
     }
   },
 
-  getters: {
-    // nickName() {
-    //     return this.nickName
-    // }
-  },
+  getters: {},
 
   actions: {
     async login(loginData: loginModule.LoginRequestParams) {

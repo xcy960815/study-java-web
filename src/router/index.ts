@@ -19,7 +19,8 @@ const routes: RouteRecordRaw[] = [
       () => import(`../views/login/index.vue`)
     ),
     meta: {
-      title: '登录'
+      title: '登录',
+      hidden: true
     }
   },
   {
@@ -79,6 +80,7 @@ declare module 'vue-router' {
     title?: string
     permission?: string | Array<string>
     link?: string
+    hidden?: boolean
   }
 }
 

@@ -2,7 +2,7 @@
   <el-header class="layout-header-container">
     <div @click="toggleClick">
       <svg
-        :class="{ 'is-active': isActive }"
+        :class="{ 'is-active': openMenuFlag }"
         class="hamburger"
         viewBox="0 0 1024 1024"
         xmlns="http://www.w3.org/2000/svg"
@@ -40,12 +40,17 @@
 <script lang="ts" setup>
 import { computed, ref, onMounted } from 'vue'
 import { useUserInfoStore } from '@store'
-const isActive = ref(false)
+import { useSystemInfoStore } from '@store'
+
 const userInfoStore = useUserInfoStore()
 const userInfo = computed(() => userInfoStore.$state)
+const systemInfoStore = useSystemInfoStore()
+const openMenuFlag = computed(
+  () => systemInfoStore.openMenuFlag
+)
 
 const toggleClick = () => {
-  isActive.value = !isActive.value
+  systemInfoStore.reversalOpenMenuFlag()
 }
 
 const handleChooseItem = (command: string) => {
@@ -71,7 +76,6 @@ onMounted(() => {
   display: flex;
   align-items: center;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-  // padding: 0;
   justify-content: space-between;
 
   .hamburger {

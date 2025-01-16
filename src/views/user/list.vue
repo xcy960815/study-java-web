@@ -193,7 +193,7 @@ const getUserList = async () => {
 const addOrEditUserFormRef = ref<FormInstance>()
 
 const addOrEditUserFormData = reactive<
-  Omit<UserOption, 'userId' | 'age' | 'createTime'>
+  Omit<UserOption, 'id' | 'age' | 'createTime'>
 >({
   nickName: '',
   loginName: '',
@@ -284,7 +284,7 @@ const handleClickDeleteUser = (row: UserOption) => {
   })
     .then(async () => {
       const result = await userModule.deleteUser<boolean>({
-        userId: row.userId
+        id: row.id
       })
       if (result.code !== 200) return
       getUserList()
