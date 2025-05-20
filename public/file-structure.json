@@ -1,0 +1,801 @@
+[
+  {
+    "label": ".DS_Store",
+    "value": ".DS_Store",
+    "isDirectory": false
+  },
+  {
+    "label": "App.vue",
+    "value": "App.vue",
+    "isDirectory": false
+  },
+  {
+    "label": "apis",
+    "value": "apis",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "deepseek.ts",
+        "value": "apis/deepseek.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "goodsCategory.ts",
+        "value": "apis/goodsCategory.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "goodsCategoryInfo.ts",
+        "value": "apis/goodsCategoryInfo.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "index.ts",
+        "value": "apis/index.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "login.ts",
+        "value": "apis/login.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "ollama.ts",
+        "value": "apis/ollama.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "project",
+        "value": "apis/project",
+        "isDirectory": true,
+        "children": []
+      },
+      {
+        "label": "system",
+        "value": "apis/system",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "adminUser.ts",
+            "value": "apis/system/adminUser.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "menu.ts",
+            "value": "apis/system/menu.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "users.ts",
+            "value": "apis/system/users.ts",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "system.ts",
+        "value": "apis/system.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "upload.ts",
+        "value": "apis/upload.ts",
+        "isDirectory": false
+      }
+    ]
+  },
+  {
+    "label": "assets",
+    "value": "assets",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": ".DS_Store",
+        "value": "assets/.DS_Store",
+        "isDirectory": false
+      },
+      {
+        "label": "images",
+        "value": "assets/images",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": ".DS_Store",
+            "value": "assets/images/.DS_Store",
+            "isDirectory": false
+          },
+          {
+            "label": "404.svg",
+            "value": "assets/images/404.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "deepseek&ollama",
+            "value": "assets/images/deepseek&ollama",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "ai.svg",
+                "value": "assets/images/deepseek&ollama/ai.svg",
+                "isDirectory": false
+              },
+              {
+                "label": "send.svg",
+                "value": "assets/images/deepseek&ollama/send.svg",
+                "isDirectory": false
+              },
+              {
+                "label": "user.svg",
+                "value": "assets/images/deepseek&ollama/user.svg",
+                "isDirectory": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "style",
+        "value": "assets/style",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "base.css",
+            "value": "assets/style/base.css",
+            "isDirectory": false
+          },
+          {
+            "label": "element",
+            "value": "assets/style/element",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "theme.scss",
+                "value": "assets/style/element/theme.scss",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "load-resource.css",
+            "value": "assets/style/load-resource.css",
+            "isDirectory": false
+          },
+          {
+            "label": "main.css",
+            "value": "assets/style/main.css",
+            "isDirectory": false
+          },
+          {
+            "label": "naive-variables.scss",
+            "value": "assets/style/naive-variables.scss",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "svg-icons",
+        "value": "assets/svg-icons",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": ".DS_Store",
+            "value": "assets/svg-icons/.DS_Store",
+            "isDirectory": false
+          },
+          {
+            "label": "admin-user.svg",
+            "value": "assets/svg-icons/admin-user.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "chat.svg",
+            "value": "assets/svg-icons/chat.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "deepseek.svg",
+            "value": "assets/svg-icons/deepseek.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "goods-category-list.svg",
+            "value": "assets/svg-icons/goods-category-list.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "goods-category.svg",
+            "value": "assets/svg-icons/goods-category.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "index.ts",
+            "value": "assets/svg-icons/index.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "lock.svg",
+            "value": "assets/svg-icons/lock.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "login.svg",
+            "value": "assets/svg-icons/login.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "ollama.svg",
+            "value": "assets/svg-icons/ollama.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "other.svg",
+            "value": "assets/svg-icons/other.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "password.svg",
+            "value": "assets/svg-icons/password.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "server-send-event.svg",
+            "value": "assets/svg-icons/server-send-event.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "system.svg",
+            "value": "assets/svg-icons/system.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "user-list.svg",
+            "value": "assets/svg-icons/user-list.svg",
+            "isDirectory": false
+          },
+          {
+            "label": "user.svg",
+            "value": "assets/svg-icons/user.svg",
+            "isDirectory": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "components",
+    "value": "components",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "ai-chat",
+        "value": "components/ai-chat",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "chat-copy.vue",
+            "value": "components/ai-chat/chat-copy.vue",
+            "isDirectory": false
+          },
+          {
+            "label": "chat-input.vue",
+            "value": "components/ai-chat/chat-input.vue",
+            "isDirectory": false
+          },
+          {
+            "label": "chat-thinking.vue",
+            "value": "components/ai-chat/chat-thinking.vue",
+            "isDirectory": false
+          },
+          {
+            "label": "index.vue",
+            "value": "components/ai-chat/index.vue",
+            "isDirectory": false
+          },
+          {
+            "label": "useAutoScroll.ts",
+            "value": "components/ai-chat/useAutoScroll.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "useCopyCode.ts",
+            "value": "components/ai-chat/useCopyCode.ts",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "file-tree",
+        "value": "components/file-tree",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "index.vue",
+            "value": "components/file-tree/index.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "handle-toolbar",
+        "value": "components/handle-toolbar",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "index.vue",
+            "value": "components/handle-toolbar/index.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "icon",
+        "value": "components/icon",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "index.vue",
+            "value": "components/icon/index.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "index.ts",
+        "value": "components/index.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "layout",
+        "value": "components/layout",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "header",
+            "value": "components/layout/header",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "components/layout/header/index.vue",
+                "isDirectory": false
+              },
+              {
+                "label": "themen.vue",
+                "value": "components/layout/header/themen.vue",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "history",
+            "value": "components/layout/history",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "components/layout/history/index.vue",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "index.vue",
+            "value": "components/layout/index.vue",
+            "isDirectory": false
+          },
+          {
+            "label": "menu",
+            "value": "components/layout/menu",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "components/layout/menu/index.vue",
+                "isDirectory": false
+              },
+              {
+                "label": "menu-item.vue",
+                "value": "components/layout/menu/menu-item.vue",
+                "isDirectory": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "loading",
+        "value": "components/loading",
+        "isDirectory": true,
+        "children": []
+      },
+      {
+        "label": "svg-icon",
+        "value": "components/svg-icon",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "index.vue",
+            "value": "components/svg-icon/index.vue",
+            "isDirectory": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "enums",
+    "value": "enums",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "index.ts",
+        "value": "enums/index.ts",
+        "isDirectory": false
+      }
+    ]
+  },
+  {
+    "label": "main.ts",
+    "value": "main.ts",
+    "isDirectory": false
+  },
+  {
+    "label": "plugins",
+    "value": "plugins",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "async-computed.ts",
+        "value": "plugins/async-computed.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "file-structure.ts",
+        "value": "plugins/file-structure.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "function-decorator.ts",
+        "value": "plugins/function-decorator.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "markdown.scss",
+        "value": "plugins/markdown.scss",
+        "isDirectory": false
+      },
+      {
+        "label": "markdown.ts",
+        "value": "plugins/markdown.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "pre-wrapper.ts",
+        "value": "plugins/pre-wrapper.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "redirect.ts",
+        "value": "plugins/redirect.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "vue-highlight.ts",
+        "value": "plugins/vue-highlight.ts",
+        "isDirectory": false
+      }
+    ]
+  },
+  {
+    "label": "router",
+    "value": "router",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "index.ts",
+        "value": "router/index.ts",
+        "isDirectory": false
+      }
+    ]
+  },
+  {
+    "label": "store",
+    "value": "store",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "index.ts",
+        "value": "store/index.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "modules",
+        "value": "store/modules",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "login.ts",
+            "value": "store/modules/login.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "system.ts",
+            "value": "store/modules/system.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "user.ts",
+            "value": "store/modules/user.ts",
+            "isDirectory": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "utils",
+    "value": "utils",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "ai",
+        "value": "utils/ai",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "core.ts",
+            "value": "utils/ai/core.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "gpt.ts",
+            "value": "utils/ai/gpt.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "index.ts",
+            "value": "utils/ai/index.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "ollama.ts",
+            "value": "utils/ai/ollama.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "text.ts",
+            "value": "utils/ai/text.ts",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "encryption.ts",
+        "value": "utils/encryption.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "event-emits.ts",
+        "value": "utils/event-emits.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "generate-color.ts",
+        "value": "utils/generate-color.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "request.ts",
+        "value": "utils/request.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "svg2base64.ts",
+        "value": "utils/svg2base64.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "system-style.ts",
+        "value": "utils/system-style.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "token.ts",
+        "value": "utils/token.ts",
+        "isDirectory": false
+      }
+    ]
+  },
+  {
+    "label": "views",
+    "value": "views",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "admin-user",
+        "value": "views/admin-user",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "list.vue",
+            "value": "views/admin-user/list.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "deepseek",
+        "value": "views/deepseek",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "chat",
+            "value": "views/deepseek/chat",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/deepseek/chat/index.vue",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "models",
+            "value": "views/deepseek/models",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/deepseek/models/index.vue",
+                "isDirectory": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "error",
+        "value": "views/error",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "404.vue",
+            "value": "views/error/404.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "file-upload",
+        "value": "views/file-upload",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "file-upload.vue",
+            "value": "views/file-upload/file-upload.vue",
+            "isDirectory": false
+          },
+          {
+            "label": "large-file-upload.vue",
+            "value": "views/file-upload/large-file-upload.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "goods-category",
+        "value": "views/goods-category",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "info.vue",
+            "value": "views/goods-category/info.vue",
+            "isDirectory": false
+          },
+          {
+            "label": "list.vue",
+            "value": "views/goods-category/list.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "login",
+        "value": "views/login",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "background.ts",
+            "value": "views/login/background.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "index.vue",
+            "value": "views/login/index.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "ollama",
+        "value": "views/ollama",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "chat",
+            "value": "views/ollama/chat",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/ollama/chat/index.vue",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "models",
+            "value": "views/ollama/models",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/ollama/models/index.vue",
+                "isDirectory": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "password",
+        "value": "views/password",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "index.vue",
+            "value": "views/password/index.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "system",
+        "value": "views/system",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "menu",
+            "value": "views/system/menu",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/system/menu/index.vue",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "user",
+            "value": "views/system/user",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "info.vue",
+                "value": "views/system/user/info.vue",
+                "isDirectory": false
+              },
+              {
+                "label": "list.vue",
+                "value": "views/system/user/list.vue",
+                "isDirectory": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
