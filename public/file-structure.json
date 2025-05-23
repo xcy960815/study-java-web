@@ -304,18 +304,6 @@
         ]
       },
       {
-        "label": "file-tree",
-        "value": "components/file-tree",
-        "isDirectory": true,
-        "children": [
-          {
-            "label": "index.vue",
-            "value": "components/file-tree/index.vue",
-            "isDirectory": false
-          }
-        ]
-      },
-      {
         "label": "handle-toolbar",
         "value": "components/handle-toolbar",
         "isDirectory": true,
@@ -585,6 +573,11 @@
         "isDirectory": false
       },
       {
+        "label": "loading-progress.ts",
+        "value": "utils/loading-progress.ts",
+        "isDirectory": false
+      },
+      {
         "label": "request.ts",
         "value": "utils/request.ts",
         "isDirectory": false
@@ -770,6 +763,23 @@
             "value": "views/system/menu",
             "isDirectory": true,
             "children": [
+              {
+                "label": "components",
+                "value": "views/system/menu/components",
+                "isDirectory": true,
+                "children": [
+                  {
+                    "label": "file-tree.vue",
+                    "value": "views/system/menu/components/file-tree.vue",
+                    "isDirectory": false
+                  },
+                  {
+                    "label": "menu-icon.vue",
+                    "value": "views/system/menu/components/menu-icon.vue",
+                    "isDirectory": false
+                  }
+                ]
+              },
               {
                 "label": "index.vue",
                 "value": "views/system/menu/index.vue",
