@@ -769,13 +769,13 @@
                 "isDirectory": true,
                 "children": [
                   {
-                    "label": "file-tree.vue",
-                    "value": "views/system/menu/components/file-tree.vue",
+                    "label": "file-tree-selector.vue",
+                    "value": "views/system/menu/components/file-tree-selector.vue",
                     "isDirectory": false
                   },
                   {
-                    "label": "menu-icon.vue",
-                    "value": "views/system/menu/components/menu-icon.vue",
+                    "label": "menu-icon-selector.vue",
+                    "value": "views/system/menu/components/menu-icon-selector.vue",
                     "isDirectory": false
                   }
                 ]
