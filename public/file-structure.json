@@ -61,6 +61,11 @@
             "isDirectory": false
           },
           {
+            "label": "dictionary.ts",
+            "value": "apis/system/dictionary.ts",
+            "isDirectory": false
+          },
+          {
             "label": "menu.ts",
             "value": "apis/system/menu.ts",
             "isDirectory": false
@@ -758,6 +763,18 @@
         "value": "views/system",
         "isDirectory": true,
         "children": [
+          {
+            "label": "data-dictionary",
+            "value": "views/system/data-dictionary",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/system/data-dictionary/index.vue",
+                "isDirectory": false
+              }
+            ]
+          },
           {
             "label": "menu",
             "value": "views/system/menu",
