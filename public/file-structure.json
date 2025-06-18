@@ -45,12 +45,6 @@
         "isDirectory": false
       },
       {
-        "label": "project",
-        "value": "apis/project",
-        "isDirectory": true,
-        "children": []
-      },
-      {
         "label": "system",
         "value": "apis/system",
         "isDirectory": true,
@@ -68,6 +62,11 @@
           {
             "label": "menu.ts",
             "value": "apis/system/menu.ts",
+            "isDirectory": false
+          },
+          {
+            "label": "role.ts",
+            "value": "apis/system/role.ts",
             "isDirectory": false
           },
           {
@@ -173,6 +172,11 @@
           {
             "label": "naive-variables.scss",
             "value": "assets/style/naive-variables.scss",
+            "isDirectory": false
+          },
+          {
+            "label": "page.scss",
+            "value": "assets/style/page.scss",
             "isDirectory": false
           }
         ]
@@ -416,6 +420,38 @@
     ]
   },
   {
+    "label": "composables",
+    "value": "composables",
+    "isDirectory": true,
+    "children": [
+      {
+        "label": "promise-timeout.ts",
+        "value": "composables/promise-timeout.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "string-uitils.ts",
+        "value": "composables/string-uitils.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "text.ts",
+        "value": "composables/text.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "useAsyncComputed.ts",
+        "value": "composables/useAsyncComputed.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "useCompletions.ts",
+        "value": "composables/useCompletions.ts",
+        "isDirectory": false
+      }
+    ]
+  },
+  {
     "label": "enums",
     "value": "enums",
     "isDirectory": true,
@@ -539,26 +575,6 @@
             "label": "core.ts",
             "value": "utils/ai/core.ts",
             "isDirectory": false
-          },
-          {
-            "label": "gpt.ts",
-            "value": "utils/ai/gpt.ts",
-            "isDirectory": false
-          },
-          {
-            "label": "index.ts",
-            "value": "utils/ai/index.ts",
-            "isDirectory": false
-          },
-          {
-            "label": "ollama.ts",
-            "value": "utils/ai/ollama.ts",
-            "isDirectory": false
-          },
-          {
-            "label": "text.ts",
-            "value": "utils/ai/text.ts",
-            "isDirectory": false
           }
         ]
       },
@@ -609,18 +625,6 @@
     "value": "views",
     "isDirectory": true,
     "children": [
-      {
-        "label": "admin-user",
-        "value": "views/admin-user",
-        "isDirectory": true,
-        "children": [
-          {
-            "label": "list.vue",
-            "value": "views/admin-user/list.vue",
-            "isDirectory": false
-          }
-        ]
-      },
       {
         "label": "deepseek",
         "value": "views/deepseek",
@@ -800,6 +804,18 @@
               {
                 "label": "index.vue",
                 "value": "views/system/menu/index.vue",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "role",
+            "value": "views/system/role",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "list.vue",
+                "value": "views/system/role/list.vue",
                 "isDirectory": false
               }
             ]
