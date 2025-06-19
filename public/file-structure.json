@@ -15,6 +15,11 @@
     "isDirectory": true,
     "children": [
       {
+        "label": "deepseek.ts",
+        "value": "apis/deepseek.ts",
+        "isDirectory": false
+      },
+      {
         "label": "goodsCategory.ts",
         "value": "apis/goodsCategory.ts",
         "isDirectory": false
@@ -45,11 +50,6 @@
         "isDirectory": true,
         "children": [
           {
-            "label": "adminUser.ts",
-            "value": "apis/system/adminUser.ts",
-            "isDirectory": false
-          },
-          {
             "label": "dictionary.ts",
             "value": "apis/system/dictionary.ts",
             "isDirectory": false
@@ -70,11 +70,6 @@
             "isDirectory": false
           }
         ]
-      },
-      {
-        "label": "system.ts",
-        "value": "apis/system.ts",
-        "isDirectory": false
       },
       {
         "label": "upload.ts",
@@ -448,6 +443,11 @@
         "label": "useEncryption.ts",
         "value": "composables/useEncryption.ts",
         "isDirectory": false
+      },
+      {
+        "label": "useFilterMenuTree.ts",
+        "value": "composables/useFilterMenuTree.ts",
+        "isDirectory": false
       }
     ]
   },
@@ -473,11 +473,6 @@
     "value": "plugins",
     "isDirectory": true,
     "children": [
-      {
-        "label": "async-computed.ts",
-        "value": "plugins/async-computed.ts",
-        "isDirectory": false
-      },
       {
         "label": "file-structure.ts",
         "value": "plugins/file-structure.ts",
@@ -801,6 +796,12 @@
             "value": "views/system/role",
             "isDirectory": true,
             "children": [
+              {
+                "label": "components",
+                "value": "views/system/role/components",
+                "isDirectory": true,
+                "children": []
+              },
               {
                 "label": "list.vue",
                 "value": "views/system/role/list.vue",
