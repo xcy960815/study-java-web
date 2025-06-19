@@ -15,11 +15,6 @@
     "isDirectory": true,
     "children": [
       {
-        "label": "deepseek.ts",
-        "value": "apis/deepseek.ts",
-        "isDirectory": false
-      },
-      {
         "label": "goodsCategory.ts",
         "value": "apis/goodsCategory.ts",
         "isDirectory": false
@@ -448,6 +443,11 @@
         "label": "useCompletions.ts",
         "value": "composables/useCompletions.ts",
         "isDirectory": false
+      },
+      {
+        "label": "useEncryption.ts",
+        "value": "composables/useEncryption.ts",
+        "isDirectory": false
       }
     ]
   },
@@ -567,20 +567,8 @@
     "isDirectory": true,
     "children": [
       {
-        "label": "ai",
-        "value": "utils/ai",
-        "isDirectory": true,
-        "children": [
-          {
-            "label": "core.ts",
-            "value": "utils/ai/core.ts",
-            "isDirectory": false
-          }
-        ]
-      },
-      {
-        "label": "encryption.ts",
-        "value": "utils/encryption.ts",
+        "label": "completions-core.ts",
+        "value": "utils/completions-core.ts",
         "isDirectory": false
       },
       {
@@ -825,11 +813,6 @@
             "value": "views/system/user",
             "isDirectory": true,
             "children": [
-              {
-                "label": "info.vue",
-                "value": "views/system/user/info.vue",
-                "isDirectory": false
-              },
               {
                 "label": "list.vue",
                 "value": "views/system/user/list.vue",
