@@ -562,6 +562,11 @@
     "isDirectory": true,
     "children": [
       {
+        "label": "build-route.ts",
+        "value": "utils/build-route.ts",
+        "isDirectory": false
+      },
+      {
         "label": "completions-core.ts",
         "value": "utils/completions-core.ts",
         "isDirectory": false
