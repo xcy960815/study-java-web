@@ -1,10 +1,5 @@
 [
   {
-    "label": ".DS_Store",
-    "value": ".DS_Store",
-    "isDirectory": false
-  },
-  {
     "label": "App.vue",
     "value": "App.vue",
     "isDirectory": false
