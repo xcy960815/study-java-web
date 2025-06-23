@@ -808,8 +808,8 @@
                 "children": []
               },
               {
-                "label": "list.vue",
-                "value": "views/system/role/list.vue",
+                "label": "index.vue",
+                "value": "views/system/role/index.vue",
                 "isDirectory": false
               }
             ]
@@ -820,8 +820,8 @@
             "isDirectory": true,
             "children": [
               {
-                "label": "list.vue",
-                "value": "views/system/user/list.vue",
+                "label": "index.vue",
+                "value": "views/system/user/index.vue",
                 "isDirectory": false
               }
             ]
