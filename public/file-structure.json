@@ -473,11 +473,6 @@
         "isDirectory": false
       },
       {
-        "label": "redirect.ts",
-        "value": "plugins/redirect.ts",
-        "isDirectory": false
-      },
-      {
         "label": "vue-highlight.ts",
         "value": "plugins/vue-highlight.ts",
         "isDirectory": false
@@ -492,6 +487,11 @@
       {
         "label": "index.ts",
         "value": "router/index.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "routes.ts",
+        "value": "router/routes.ts",
         "isDirectory": false
       }
     ]
