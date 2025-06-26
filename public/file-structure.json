@@ -20,8 +20,8 @@
         "isDirectory": false
       },
       {
-        "label": "goodsCategory.ts",
-        "value": "apis/goodsCategory.ts",
+        "label": "goods.ts",
+        "value": "apis/goods.ts",
         "isDirectory": false
       },
       {
@@ -50,8 +50,8 @@
         "isDirectory": true,
         "children": [
           {
-            "label": "dictionary.ts",
-            "value": "apis/system/dictionary.ts",
+            "label": "dataDict.ts",
+            "value": "apis/system/dataDict.ts",
             "isDirectory": false
           },
           {
