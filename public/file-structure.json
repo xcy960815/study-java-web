@@ -674,18 +674,13 @@
         ]
       },
       {
-        "label": "goods-category",
-        "value": "views/goods-category",
+        "label": "goods",
+        "value": "views/goods",
         "isDirectory": true,
         "children": [
           {
-            "label": "info.vue",
-            "value": "views/goods-category/info.vue",
-            "isDirectory": false
-          },
-          {
-            "label": "list.vue",
-            "value": "views/goods-category/list.vue",
+            "label": "index.vue",
+            "value": "views/goods/index.vue",
             "isDirectory": false
           }
         ]
