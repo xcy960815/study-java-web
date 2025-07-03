@@ -1,10 +1,5 @@
 [
   {
-    "label": ".DS_Store",
-    "value": ".DS_Store",
-    "isDirectory": false
-  },
-  {
     "label": "App.vue",
     "value": "App.vue",
     "isDirectory": false
@@ -42,6 +37,11 @@
       {
         "label": "ollama.ts",
         "value": "apis/ollama.ts",
+        "isDirectory": false
+      },
+      {
+        "label": "order.ts",
+        "value": "apis/order.ts",
         "isDirectory": false
       },
       {
@@ -84,20 +84,10 @@
     "isDirectory": true,
     "children": [
       {
-        "label": ".DS_Store",
-        "value": "assets/.DS_Store",
-        "isDirectory": false
-      },
-      {
         "label": "images",
         "value": "assets/images",
         "isDirectory": true,
         "children": [
-          {
-            "label": ".DS_Store",
-            "value": "assets/images/.DS_Store",
-            "isDirectory": false
-          },
           {
             "label": "404.svg",
             "value": "assets/images/404.svg",
@@ -176,11 +166,6 @@
         "value": "assets/svg-icons",
         "isDirectory": true,
         "children": [
-          {
-            "label": ".DS_Store",
-            "value": "assets/svg-icons/.DS_Store",
-            "isDirectory": false
-          },
           {
             "label": "admin-user.svg",
             "value": "assets/svg-icons/admin-user.svg",
@@ -388,12 +373,6 @@
             ]
           }
         ]
-      },
-      {
-        "label": "loading",
-        "value": "components/loading",
-        "isDirectory": true,
-        "children": []
       },
       {
         "label": "svg-icon",
@@ -734,6 +713,18 @@
         ]
       },
       {
+        "label": "order",
+        "value": "views/order",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "index.vue",
+            "value": "views/order/index.vue",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
         "label": "password",
         "value": "views/password",
         "isDirectory": true,
@@ -796,12 +787,6 @@
             "value": "views/system/role",
             "isDirectory": true,
             "children": [
-              {
-                "label": "components",
-                "value": "views/system/role/components",
-                "isDirectory": true,
-                "children": []
-              },
               {
                 "label": "index.vue",
                 "value": "views/system/role/index.vue",
