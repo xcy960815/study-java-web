@@ -370,6 +370,12 @@
         ]
       },
       {
+        "label": "loading",
+        "value": "components/loading",
+        "isDirectory": true,
+        "children": []
+      },
+      {
         "label": "svg-icon",
         "value": "components/svg-icon",
         "isDirectory": true,
@@ -782,6 +788,12 @@
             "value": "views/system/role",
             "isDirectory": true,
             "children": [
+              {
+                "label": "components",
+                "value": "views/system/role/components",
+                "isDirectory": true,
+                "children": []
+              },
               {
                 "label": "index.vue",
                 "value": "views/system/role/index.vue",
