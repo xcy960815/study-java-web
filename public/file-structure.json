@@ -30,6 +30,18 @@
         "isDirectory": false
       },
       {
+        "label": "monitor",
+        "value": "apis/monitor",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "operlog.ts",
+            "value": "apis/monitor/operlog.ts",
+            "isDirectory": false
+          }
+        ]
+      },
+      {
         "label": "ollama.ts",
         "value": "apis/ollama.ts",
         "isDirectory": false
@@ -679,6 +691,25 @@
             "label": "index.vue",
             "value": "views/login/index.vue",
             "isDirectory": false
+          }
+        ]
+      },
+      {
+        "label": "monitor",
+        "value": "views/monitor",
+        "isDirectory": true,
+        "children": [
+          {
+            "label": "operlog",
+            "value": "views/monitor/operlog",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/monitor/operlog/index.vue",
+                "isDirectory": false
+              }
+            ]
           }
         ]
       },
