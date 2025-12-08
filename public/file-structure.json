@@ -52,6 +52,11 @@
         "isDirectory": false
       },
       {
+        "label": "server-monitor.ts",
+        "value": "apis/server-monitor.ts",
+        "isDirectory": false
+      },
+      {
         "label": "system",
         "value": "apis/system",
         "isDirectory": true,
@@ -597,6 +602,11 @@
         "label": "token.ts",
         "value": "utils/token.ts",
         "isDirectory": false
+      },
+      {
+        "label": "websocket.ts",
+        "value": "utils/websocket.ts",
+        "isDirectory": false
       }
     ]
   },
@@ -707,6 +717,18 @@
               {
                 "label": "index.vue",
                 "value": "views/monitor/operlog/index.vue",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "server",
+            "value": "views/monitor/server",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/monitor/server/index.vue",
                 "isDirectory": false
               }
             ]
