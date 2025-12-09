@@ -427,11 +427,6 @@
         "isDirectory": false
       },
       {
-        "label": "text.ts",
-        "value": "composables/text.ts",
-        "isDirectory": false
-      },
-      {
         "label": "useAsyncComputed.ts",
         "value": "composables/useAsyncComputed.ts",
         "isDirectory": false
