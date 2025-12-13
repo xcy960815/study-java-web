@@ -52,6 +52,11 @@
         "isDirectory": false
       },
       {
+        "label": "report.ts",
+        "value": "apis/report.ts",
+        "isDirectory": false
+      },
+      {
         "label": "server-monitor.ts",
         "value": "apis/server-monitor.ts",
         "isDirectory": false
@@ -712,6 +717,18 @@
               {
                 "label": "index.vue",
                 "value": "views/monitor/operlog/index.vue",
+                "isDirectory": false
+              }
+            ]
+          },
+          {
+            "label": "report",
+            "value": "views/monitor/report",
+            "isDirectory": true,
+            "children": [
+              {
+                "label": "index.vue",
+                "value": "views/monitor/report/index.vue",
                 "isDirectory": false
               }
             ]
