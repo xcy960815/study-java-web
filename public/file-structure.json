@@ -491,6 +491,11 @@
         "isDirectory": false
       },
       {
+        "label": "permission.ts",
+        "value": "plugins/permission.ts",
+        "isDirectory": false
+      },
+      {
         "label": "pre-wrapper.ts",
         "value": "plugins/pre-wrapper.ts",
         "isDirectory": false
@@ -552,6 +557,12 @@
         ]
       }
     ]
+  },
+  {
+    "label": "types",
+    "value": "types",
+    "isDirectory": true,
+    "children": []
   },
   {
     "label": "utils",
